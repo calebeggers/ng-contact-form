@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Cool Project</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body ng-app="app">
+		<div class="container" ng-controller="MainController">
+			<div class="title">Contact Us</div>
+			<form id="form" ng-submit="submit(form)">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Sally Smith" class="name form-field" ng-model="form.name" ng-keyup="nameCheck()">
+				<div id="name-field" class="alert">{{ nameNotice }}</div>
+
+				<label>Email</label>
+				<input type="text" name="email" placeholder="sallysmith@gmail.com" class="email form-field" ng-model="form.email" ng-keyup="emailCheck()">
+				<div class="alert">{{ emailNotice }}</div>
+
+				<label>Website</label>
+				<input type="text" name="website" placeholder="http://sallysmith.com" class="website form-field" ng-model="form.website" ng-keyup="websiteCheck()">
+				<div class="alert">{{ websiteNotice }}</div>
+
+				<label>Message</label>
+				<textarea placeholder="A friendly message..." class="message form-field" ng-model="form.message" ng-keyup="messageCheck()"></textarea>
+				<div class="hidden alert">{{ messageNotice }}</div>
+
+				<button class="{{ buttonStatus }}">Submit</button>
+			</form>
+		</div>
+		<script src="js/bundle.js"></script>
+	</body>
+</html>
