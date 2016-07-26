@@ -12,23 +12,41 @@
 			<div class="title">Contact Us</div>
 			<form id="form" ng-submit="submit(form)">
 				<label>Name</label>
-				<input type="text" name="name" placeholder="Sally Smith" class="name form-field" ng-model="form.name" ng-keyup="nameCheck()">
+				<input type="text" name="name" placeholder="Sally Smith" class="name {{ nameFieldStatus }}" ng-model="form.name" ng-keyup="nameCheck()">
 				<div id="name-field" class="alert">{{ nameNotice }}</div>
 
 				<label>Email</label>
-				<input type="text" name="email" placeholder="sallysmith@gmail.com" class="email form-field" ng-model="form.email" ng-keyup="emailCheck()">
+				<input type="text" name="email" placeholder="sallysmith@gmail.com" class="email {{ emailFieldStatus }}" ng-model="form.email" ng-keyup="emailCheck()">
 				<div class="alert">{{ emailNotice }}</div>
 
 				<label>Website</label>
-				<input type="text" name="website" placeholder="http://sallysmith.com" class="website form-field" ng-model="form.website" ng-keyup="websiteCheck()">
+				<input type="text" name="website" placeholder="http://sallysmith.com" class="website {{ websiteFieldStatus }}" ng-model="form.website" ng-keyup="websiteCheck()">
 				<div class="alert">{{ websiteNotice }}</div>
 
 				<label>Message</label>
-				<textarea placeholder="A friendly message..." class="message form-field" ng-model="form.message" ng-keyup="messageCheck()"></textarea>
+				<textarea placeholder="A friendly message..." class="message {{ messageFieldStatus }}" ng-model="form.message" ng-keyup="messageCheck()" ng-keyup="buttonCheck()"></textarea>
 				<div class="hidden alert">{{ messageNotice }}</div>
 
 				<button class="{{ buttonStatus }}">Submit</button>
 			</form>
+			<div class="contact-list">
+				<div ng-repeat="contact in contacts">
+					<div class="contact-item">
+						<div class="contact-meta">
+							{{ contact.name }}
+						</div>
+						<div class="contact-meta">
+							{{ contact.email }}
+						</div>
+						<div class="contact-meta">
+							{{ contact.website }}
+						</div>
+						<div class="contact-meta">
+							{{ contact.message }}
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="js/bundle.js"></script>
 	</body>

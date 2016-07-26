@@ -28,6 +28,32 @@ label {
 	}
 }
 
+.field-valid {
+	width: 100%;
+	padding: 5px;
+	border-left: 4px solid #88C470;
+	border-bottom: 1px solid #D6D6D6;
+	border-right: 1px solid #D6D6D6;
+	border-top: 1px solid #D6D6D6;
+	margin-bottom: 10px;
+	&:focus {
+		outline: none;
+	}
+}
+
+.field-invalid {
+	width: 100%;
+	padding: 5px;
+	border-left: 4px solid red;
+	border-bottom: 1px solid #D6D6D6;
+	border-right: 1px solid #D6D6D6;
+	border-top: 1px solid #D6D6D6;
+	margin-bottom: 10px;
+	&:focus {
+		outline: none;
+	}
+}
+
 .message {
 	max-width: 500px;
 	min-height: 100px;
@@ -56,4 +82,17 @@ label {
 	background-color: black;
 	color: #FFF;
 	border: 0;
+}
+
+.contact-list {
+	padding-top: 20px;
+}
+
+.contact-item {
+	border: 1px solid #EFEFEF;
+	margin: 10px;
+}
+
+.contact-meta {
+	padding: 10px;
 }
